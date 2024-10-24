@@ -1,0 +1,1 @@
+- [ ] Remove most of the useless code in the `AppLogic.cpp` file.

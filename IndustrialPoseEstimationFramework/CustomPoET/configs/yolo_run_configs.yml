@@ -1,0 +1,16 @@
+training_configs:
+  device: '0'
+  weights: '/opt/project/PreTrained/best.pt'
+  cfg: '/opt/project/configs/yolo.cfg'
+  hyp: '/opt/project/models/yolov4/yolo/data/hyp.scratch.yaml'
+  to_freeze: 50
+  epochs: 20
+  batch_size: 16
+  train: true
+
+
+inference_configs:
+  device: '0'
+  weights: '/opt/project/PreTrained/best.pt'
+  cfg: '/opt/project/configs/yolo.cfg'
+  output: '/opt/project/YoloOutput'

@@ -1,0 +1,25 @@
+# train and val datasets (image directory or *.txt file with image paths)
+train: /YoloDataset/train/train.txt
+val: /YoloDataset/test/val.txt
+test: /YoloDataset/test/test.txt
+
+# number of classes
+nc: 14
+
+# class names
+names: [
+  'obj_000001',
+  'obj_000002',
+  'obj_000003',
+  'obj_000004',
+  'obj_000005',
+  'obj_000006',
+  'obj_000007',
+  'obj_000008',
+  'obj_000009',
+  'obj_000010',
+  'obj_000011',
+  'obj_000012',
+  'obj_000013',
+  'obj_000014'
+]

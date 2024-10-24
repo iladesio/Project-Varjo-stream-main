@@ -1,0 +1,34 @@
+#version 450
+layout (local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
+
+layout (rgba8, binding = 0) uniform image2D colorImage;
+layout (r8, binding = 1) readonly uniform image2D vrsImage;
+
+layout (binding = 2) uniform Block {
+    vec2 texSize;
+    vec2 vrsTexSize;
+};
+
+vec4 vrsColors[11] = {
+    vec4(0, 0, 1, 0.2f),             // 0
+    vec4(1, 1, 0, 0.5f),             // 1
+    vec4(0,0,0,0),
+    vec4(0,0,0,0),
+    vec4(0, 0, 1, 0.2f),             // 4
+    vec4(0, 1, 0, 0.5f),             // 5
+    vec4(0.54f, 0.19f, 0.88f, 0.5f), // 6
+    vec4(0, 1, 0, 0.5f),
+    vec4(0,0,0,0),
+    vec4(0.54f, 0.19f, 0.88f, 0.5f), // 9
+    vec4(1, 0, 0, 0.5f),             // 10
+};
+
+void main()
+{
+    vec2 uv = gl_GlobalInvocationID.xy / texSize;
+    ivec2 vrsMapPos = ivec2(uv * vrsTexSize);
+    vec4 vrsValue = imageLoad(vrsImage, vrsMapPos);
+    vec4 vrsColor = vrsColors[uint(vrsValue.x * 255.0)];
+    vec4 pixel = imageLoad(colorImage, ivec2(gl_GlobalInvocationID.xy));
+    imageStore(colorImage, ivec2(gl_GlobalInvocationID.xy), pixel * vrsColor);
+}

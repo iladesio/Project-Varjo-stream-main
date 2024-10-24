@@ -1,0 +1,43 @@
+training_configs:
+  device: 'cuda'
+  batch_size: 8
+  eval_batch_size: 8
+  epochs: 100
+  backbone: 'yolov4'
+  backbone_cfg: '/opt/project/configs/yolo.cfg'
+  backbone_weights: '/opt/project/PreTrained/ycbv_yolo_weights.pt'
+  bbox_mode: 'backbone'
+  dataset_path: '/opt/project/PoetDataset'
+  n_classes: 14
+  train_set: 'train'
+  lr_backbone: 0
+  num_queries: 8
+  sgd: false
+  output_dir: '/opt/project/PoetOutput'
+  save_interval: 10
+  eval_interval: 10
+  enc_layers: 5
+  dec_layers: 5
+  rotation_loss_coef: 1
+  translation_loss_coef: 2
+  rotation_represenation: "6d"
+  nheads: 16
+
+inference_configs: 
+  backbone: 'yolov4'
+  backbone_cfg: '/opt/project/configs/yolo.cfg'
+  backbone_weights: '/opt/project/PreTrained/yolo_thales.pt'
+  resume: '/opt/project/PreTrained/poet_thales.pth'
+  inference: 1
+  inference_output: '/opt/project/InferenceOutput'
+  lr_backbone: 0
+  bbox_mode: 'backbone'
+  dataset_path: '/opt/project/PoetDataset'
+  n_classes: 14
+  lr_backbone: 0
+  num_queries: 8
+  enc_layers: 5
+  dec_layers: 5
+  rotation_represenation: "6d"
+  nheads: 16
+  inference_path: '/data/0000'
