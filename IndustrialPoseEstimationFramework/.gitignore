@@ -9,6 +9,8 @@ CustomBlenderproc/blenderproc.egg-info/
 CustomPoET/YoloOutput/
 CustomPoET/YoloRuns/
 
+Scripts/ven/
+
 CustomPoET/PoetOutput/
 CustomPoET/PoetDataset/
 CustomPoET/InferenceOutput/
