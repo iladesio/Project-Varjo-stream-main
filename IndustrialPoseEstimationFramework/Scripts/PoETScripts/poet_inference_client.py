@@ -5,9 +5,10 @@ import struct
 import os
 
 SCRIPT_DIR = os.path.dirname(__file__)
+print(SCRIPT_DIR)
 
 def client():
-
+    
     if not os.path.exists(f'{SCRIPT_DIR}/../../CustomPoET/InferenceOutput'):
         os.mkdir(f'{SCRIPT_DIR}/../../CustomPoET/InferenceOutput')
     video_path = f'{SCRIPT_DIR}/../../CustomPoET/InferenceOutput/webcam_video_inference.mp4'

@@ -14,7 +14,7 @@ check_installed() {
 check_installed python3.8 "Python 3.8"
 
 # Check if pip for Python 3.8 is installed
-check_installed pip3.8 "pip for Python 3.8"
+#check_installed pip3.8 "pip for Python 3.8"
 
 # Check if python3.8-venv package is installed
 if dpkg -l | grep -q python3.8-venv; then

@@ -177,7 +177,7 @@ def get_args_parser():
                         help='rank of the process')     
     parser.add_argument('--gpu', default=0, type=int, help='rank of the process')
 
-    parser.add_argument('--webcam', default=False, type=int, help='rank of the process')
+    parser.add_argument('--webcam', default=True, type=int, help='rank of the process')
 
     return parser
 
